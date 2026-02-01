@@ -8,7 +8,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_main)
 
         val rgMode = findViewById<RadioGroup>(R.id.rgMode)
         val btnScanProf = findViewById<Button>(R.id.btnScanProf)
@@ -21,39 +21,15 @@ class MainActivity : AppCompatActivity() {
         val btnSync = findViewById<Button>(R.id.btnSync)
 
         btnScanProf.setOnClickListener {
-            toast("Scan copie de référence (Prof)")
+            Toast.makeText(this, "Scan Prof", Toast.LENGTH_SHORT).show()
         }
 
         btnScanEleve.setOnClickListener {
-            toast("Scan copies élèves (arrière-plan)")
-        }
-
-        btnScanNote.setOnClickListener {
-            toast("Scan notes manuelles")
+            Toast.makeText(this, "Scan Élèves", Toast.LENGTH_SHORT).show()
         }
 
         btnValider.setOnClickListener {
-            toast("Correction lancée")
+            Toast.makeText(this, "Correction en arrière-plan", Toast.LENGTH_LONG).show()
         }
-
-        btnGrille.setOnClickListener {
-            toast("Affichage de la grille")
-        }
-
-        btnHistorique.setOnClickListener {
-            toast("Historique ouvert")
-        }
-
-        btnExport.setOnClickListener {
-            toast("Exportation en cours")
-        }
-
-        btnSync.setOnClickListener {
-            toast("Synchronisation en ligne")
-        }
-    }
-
-    private fun toast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 }
