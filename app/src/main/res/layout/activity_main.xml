@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📘 Scanner IA – Professeur"
+            android:text="Scanner IA – Professeur"
             android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -22,11 +22,11 @@
 
         <!-- MODE -->
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Mode de travail"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textSize="16sp"/>
 
         <RadioGroup
             android:id="@+id/rgMode"
@@ -35,125 +35,135 @@
 
             <RadioButton
                 android:id="@+id/modeReference"
-                android:text="📑 Référence professeur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Référence professeur"
                 android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/modeIA"
-                android:text="🤖 Correction IA"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correction IA"/>
 
             <RadioButton
                 android:id="@+id/modeManuel"
-                android:text="✍️ Scan notes manuelles"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan notes manuelles"/>
         </RadioGroup>
 
         <!-- ACTIONS -->
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Actions"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="16dp"/>
 
         <Button
             android:id="@+id/btnScanProf"
-            android:text="📷 Scanner copie professeur"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Scanner copie professeur"/>
 
         <Button
             android:id="@+id/btnScanEleve"
-            android:text="📷 Scanner copie élève"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Scanner copie élève"/>
 
         <Button
             android:id="@+id/btnScanNote"
-            android:text="📷 Scanner note corrigée"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Scanner note corrigée"/>
 
-        <!-- INFOS -->
+        <!-- INFORMATIONS -->
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Informations détectées"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="16dp"/>
 
         <EditText
             android:id="@+id/etNom"
-            android:hint="Nom de l’élève"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Nom de l’élève"
+            android:inputType="textPersonName"/>
 
         <EditText
             android:id="@+id/etClasse"
-            android:hint="Classe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Classe"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/etMatiere"
-            android:hint="Matière"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Matière"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/etNote"
-            android:hint="Note / Cote"
-            android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Note / Cote"
+            android:inputType="numberDecimal"/>
 
         <EditText
             android:id="@+id/etComment"
-            android:hint="Commentaire"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:hint="Commentaire"
+            android:inputType="textMultiLine"/>
 
         <!-- VALIDATION -->
         <Button
             android:id="@+id/btnValider"
-            android:text="✅ Valider & enregistrer"
-            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Valider &amp; enregistrer"
+            android:layout_marginTop="12dp"/>
 
         <!-- GESTION -->
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Gestion"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/btnGrille"
-            android:text="📊 Voir grille des notes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Voir grille des notes"/>
 
         <Button
             android:id="@+id/btnHistorique"
-            android:text="🕓 Historique"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Historique"/>
 
         <Button
             android:id="@+id/btnExport"
-            android:text="📤 Export PDF / Excel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Export PDF / Excel"/>
 
         <Button
             android:id="@+id/btnSync"
-            android:text="☁️ Synchronisation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Synchronisation"/>
 
     </LinearLayout>
 </ScrollView>
