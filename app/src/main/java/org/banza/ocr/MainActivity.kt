@@ -1,18 +1,37 @@
 package org.banza.ocr
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.view.PreviewView
+import androidx.core.content.ContextCompat
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val text = TextView(this)
-        text.text = "OCR Scanner - Étape 2 OK ✅"
-        text.textSize = 22f
+        val previewView = PreviewView(this)
+        setContentView(previewView)
 
-        setContentView(text)
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
+
+        cameraProviderFuture.addListener({
+            val cameraProvider = cameraProviderFuture.get()
+
+            val preview = Preview.Builder().build()
+            preview.setSurfaceProvider(previewView.surfaceProvider)
+
+            val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
+            cameraProvider.bindToLifecycle(
+                this,
+                cameraSelector,
+                preview
+            )
+
+        }, ContextCompat.getMainExecutor(this))
     }
 }
