@@ -11,11 +11,14 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        findViewById<Button>(R.id.btnGoScanner).setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+        val btnGoScanner = findViewById<Button>(R.id.btnGoScanner)
+        val btnGoVerify = findViewById<Button>(R.id.btnGoVerify)
+
+        btnGoScanner.setOnClickListener {
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
 
-        findViewById<Button>(R.id.btnGoVerify).setOnClickListener {
+        btnGoVerify.setOnClickListener {
             startActivity(Intent(this, VerifyWorksActivity::class.java))
         }
     }
