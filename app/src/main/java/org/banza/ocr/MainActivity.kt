@@ -1,7 +1,9 @@
 package org.banza.ocr
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -13,23 +15,18 @@ class MainActivity : AppCompatActivity() {
         val rgMode = findViewById<RadioGroup>(R.id.rgMode)
         val btnScanProf = findViewById<Button>(R.id.btnScanProf)
         val btnScanEleve = findViewById<Button>(R.id.btnScanEleve)
-        val btnScanNote = findViewById<Button>(R.id.btnScanNote)
         val btnValider = findViewById<Button>(R.id.btnValider)
-        val btnGrille = findViewById<Button>(R.id.btnGrille)
-        val btnHistorique = findViewById<Button>(R.id.btnHistorique)
-        val btnExport = findViewById<Button>(R.id.btnExport)
-        val btnSync = findViewById<Button>(R.id.btnSync)
 
         btnScanProf.setOnClickListener {
-            Toast.makeText(this, "Scan Prof", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
 
         btnScanEleve.setOnClickListener {
-            Toast.makeText(this, "Scan Élèves", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
 
         btnValider.setOnClickListener {
-            Toast.makeText(this, "Correction en arrière-plan", Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, VerifyWorksActivity::class.java))
         }
     }
 }
