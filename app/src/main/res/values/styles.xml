@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.OCRScanner" parent="android:Theme.Material.Light.NoActionBar"/>
+
+    <style name="Theme.OCRApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1976D2</item>
+        <item name="colorPrimaryVariant">#1565C0</item>
+        <item name="colorSecondary">#03DAC5</item>
+    </style>
+
 </resources>
