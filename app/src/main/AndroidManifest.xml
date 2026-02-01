@@ -16,7 +16,7 @@
         android:label="OCR IA Correction"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OCRApp"
+        android:theme="@style/Theme.OCRApp">
 
         <!-- Écran principal -->
         <activity
