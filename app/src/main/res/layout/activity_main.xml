@@ -1,169 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="#F5F5F5">
 
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/titleApp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="📄 Scanner IA – Correction Automatique"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Vue caméra -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@id/titleApp"
+        app:layout_constraintBottom_toTopOf="@id/panelActions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Panneau actions -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/panelActions"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- TITRE -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner IA – Professeur"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingBottom="20dp"/>
-
-        <!-- MODE -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mode de travail"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
+        <!-- Mode Auto / Manuel -->
         <RadioGroup
-            android:id="@+id/rgMode"
+            android:id="@+id/modeGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <RadioButton
-                android:id="@+id/modeReference"
+                android:id="@+id/modeAuto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Référence professeur"
+                android:text="⚡ Automatique"
                 android:checked="true"/>
 
             <RadioButton
-                android:id="@+id/modeIA"
+                android:id="@+id/modeManual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Correction IA"/>
-
-            <RadioButton
-                android:id="@+id/modeManuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Scan notes manuelles"/>
+                android:text="✍️ Manuel"
+                android:layout_marginStart="24dp"/>
         </RadioGroup>
 
-        <!-- ACTIONS -->
-        <TextView
+        <!-- Boutons principaux -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Actions"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
 
+            <Button
+                android:id="@+id/btnScan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📷 Scanner"/>
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="✅ OK"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Bouton vérifier -->
         <Button
-            android:id="@+id/btnScanProf"
+            android:id="@+id/btnVerify"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Scanner copie professeur"/>
-
-        <Button
-            android:id="@+id/btnScanEleve"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner copie élève"/>
-
-        <Button
-            android:id="@+id/btnScanNote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner note corrigée"/>
-
-        <!-- INFORMATIONS -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Informations détectées"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/etNom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom de l’élève"
-            android:inputType="textPersonName"/>
-
-        <EditText
-            android:id="@+id/etClasse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Classe"
-            android:inputType="text"/>
-
-        <EditText
-            android:id="@+id/etMatiere"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Matière"
-            android:inputType="text"/>
-
-        <EditText
-            android:id="@+id/etNote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Note / Cote"
-            android:inputType="numberDecimal"/>
-
-        <EditText
-            android:id="@+id/etComment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Commentaire"
-            android:inputType="textMultiLine"/>
-
-        <!-- VALIDATION -->
-        <Button
-            android:id="@+id/btnValider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valider &amp; enregistrer"
+            android:text="🗂️ Vérifier les travaux"
             android:layout_marginTop="12dp"/>
 
-        <!-- GESTION -->
+        <!-- Résultat (mode manuel) -->
         <TextView
+            android:id="@+id/resultText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gestion"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="20dp"/>
-
-        <Button
-            android:id="@+id/btnGrille"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Voir grille des notes"/>
-
-        <Button
-            android:id="@+id/btnHistorique"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Historique"/>
-
-        <Button
-            android:id="@+id/btnExport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Export PDF / Excel"/>
-
-        <Button
-            android:id="@+id/btnSync"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Synchronisation"/>
-
+            android:text="Résultat OCR / Correction"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:background="#EEEEEE"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
