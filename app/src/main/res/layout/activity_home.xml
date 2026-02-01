@@ -1,129 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F6FA">
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <LinearLayout
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accueil – Scanner IA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnGoScanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:text="Scanner des copies"
+        android:layout_marginBottom="12dp"/>
 
-        <!-- Titre -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scanner IA Professeur"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#1A237E"
-            android:layout_marginBottom="6dp" />
+    <Button
+        android:id="@+id/btnGoVerify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vérifier les corrections"/>
 
-        <!-- Sous-titre -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Correction automatique &amp; manuelle"
-            android:textSize="14sp"
-            android:textColor="#555555"
-            android:layout_marginBottom="24dp" />
-
-        <!-- MODE -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mode de correction"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
-
-        <RadioGroup
-            android:id="@+id/rgMode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <RadioButton
-                android:id="@+id/rbAuto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Automatique"
-                android:checked="true" />
-
-            <RadioButton
-                android:id="@+id/rbManuel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Manuel"
-                android:layout_marginStart="20dp" />
-        </RadioGroup>
-
-        <!-- Boutons Scanner -->
-        <Button
-            android:id="@+id/btnScanProf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner copie de référence (Prof)"
-            android:backgroundTint="#3949AB"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnScanEleve"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner copies élèves"
-            android:backgroundTint="#1E88E5"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnScanNote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scanner notes manuelles"
-            android:backgroundTint="#00897B"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp" />
-
-        <!-- Actions -->
-        <Button
-            android:id="@+id/btnValider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valider la correction"
-            android:backgroundTint="#43A047"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnGrille"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Voir la grille de notes"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnHistorique"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Historique des corrections"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnExport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Exporter (PDF / Excel)"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnSync"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Synchroniser en ligne" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
